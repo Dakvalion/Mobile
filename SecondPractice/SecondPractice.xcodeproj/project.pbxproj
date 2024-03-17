@@ -9,25 +9,27 @@
 /* Begin PBXBuildFile section */
 		103F04842BA6E67A003A37D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F04832BA6E67A003A37D4 /* AppDelegate.swift */; };
 		103F04862BA6E67A003A37D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F04852BA6E67A003A37D4 /* SceneDelegate.swift */; };
-		103F04882BA6E67A003A37D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F04872BA6E67A003A37D4 /* ViewController.swift */; };
+		103F04882BA6E67A003A37D4 /* FromViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F04872BA6E67A003A37D4 /* FromViewController.swift */; };
 		103F048B2BA6E67A003A37D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103F04892BA6E67A003A37D4 /* Main.storyboard */; };
 		103F048D2BA6E67E003A37D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 103F048C2BA6E67E003A37D4 /* Assets.xcassets */; };
 		103F04902BA6E67E003A37D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 103F048E2BA6E67E003A37D4 /* LaunchScreen.storyboard */; };
 		103F04982BA6E6D3003A37D4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F04972BA6E6D3003A37D4 /* WebViewController.swift */; };
-		103F049A2BA6E71D003A37D4 /* PickersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F04992BA6E71D003A37D4 /* PickersViewController.swift */; };
+		103F049A2BA6E71D003A37D4 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F04992BA6E71D003A37D4 /* DialogViewController.swift */; };
+		103F049C2BA6FCD0003A37D4 /* ToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F049B2BA6FCD0003A37D4 /* ToViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		103F04802BA6E67A003A37D4 /* SecondPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		103F04832BA6E67A003A37D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		103F04852BA6E67A003A37D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		103F04872BA6E67A003A37D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		103F04872BA6E67A003A37D4 /* FromViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromViewController.swift; sourceTree = "<group>"; };
 		103F048A2BA6E67A003A37D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		103F048C2BA6E67E003A37D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		103F048F2BA6E67E003A37D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		103F04912BA6E67E003A37D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		103F04972BA6E6D3003A37D4 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		103F04992BA6E71D003A37D4 /* PickersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickersViewController.swift; sourceTree = "<group>"; };
+		103F04992BA6E71D003A37D4 /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
+		103F049B2BA6FCD0003A37D4 /* ToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +64,14 @@
 			children = (
 				103F04832BA6E67A003A37D4 /* AppDelegate.swift */,
 				103F04852BA6E67A003A37D4 /* SceneDelegate.swift */,
-				103F04872BA6E67A003A37D4 /* ViewController.swift */,
+				103F04872BA6E67A003A37D4 /* FromViewController.swift */,
 				103F04892BA6E67A003A37D4 /* Main.storyboard */,
 				103F048C2BA6E67E003A37D4 /* Assets.xcassets */,
 				103F048E2BA6E67E003A37D4 /* LaunchScreen.storyboard */,
 				103F04912BA6E67E003A37D4 /* Info.plist */,
 				103F04972BA6E6D3003A37D4 /* WebViewController.swift */,
-				103F04992BA6E71D003A37D4 /* PickersViewController.swift */,
+				103F04992BA6E71D003A37D4 /* DialogViewController.swift */,
+				103F049B2BA6FCD0003A37D4 /* ToViewController.swift */,
 			);
 			path = SecondPractice;
 			sourceTree = "<group>";
@@ -144,9 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				103F04882BA6E67A003A37D4 /* ViewController.swift in Sources */,
+				103F04882BA6E67A003A37D4 /* FromViewController.swift in Sources */,
+				103F049C2BA6FCD0003A37D4 /* ToViewController.swift in Sources */,
 				103F04842BA6E67A003A37D4 /* AppDelegate.swift in Sources */,
-				103F049A2BA6E71D003A37D4 /* PickersViewController.swift in Sources */,
+				103F049A2BA6E71D003A37D4 /* DialogViewController.swift in Sources */,
 				103F04862BA6E67A003A37D4 /* SceneDelegate.swift in Sources */,
 				103F04982BA6E6D3003A37D4 /* WebViewController.swift in Sources */,
 			);
@@ -312,7 +316,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dnikitina.practice2.SecondPractice;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.mirea.nikitina.Lesson2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -339,7 +343,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dnikitina.practice2.SecondPractice;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.mirea.nikitina.Lesson2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
