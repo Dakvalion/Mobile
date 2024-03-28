@@ -16,6 +16,7 @@
 		103F04982BA6E6D3003A37D4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F04972BA6E6D3003A37D4 /* WebViewController.swift */; };
 		103F049A2BA6E71D003A37D4 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F04992BA6E71D003A37D4 /* DialogViewController.swift */; };
 		103F049C2BA6FCD0003A37D4 /* ToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F049B2BA6FCD0003A37D4 /* ToViewController.swift */; };
+		107697552BB602CD007E6826 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 107697542BB602CC007E6826 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		103F04972BA6E6D3003A37D4 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		103F04992BA6E71D003A37D4 /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
 		103F049B2BA6FCD0003A37D4 /* ToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToViewController.swift; sourceTree = "<group>"; };
+		107697542BB602CC007E6826 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				103F04972BA6E6D3003A37D4 /* WebViewController.swift */,
 				103F04992BA6E71D003A37D4 /* DialogViewController.swift */,
 				103F049B2BA6FCD0003A37D4 /* ToViewController.swift */,
+				107697542BB602CC007E6826 /* README.md */,
 			);
 			path = SecondPractice;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			files = (
 				103F04902BA6E67E003A37D4 /* LaunchScreen.storyboard in Resources */,
 				103F048D2BA6E67E003A37D4 /* Assets.xcassets in Resources */,
+				107697552BB602CD007E6826 /* README.md in Resources */,
 				103F048B2BA6E67A003A37D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

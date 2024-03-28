@@ -29,7 +29,8 @@ class FromViewController: UIViewController {
     }
     
     @IBAction func clickMeButtonAction(_ sender: Any) {
-        let toViewController = ToViewController()
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        guard let toViewController = storyboard.instantiateViewController(withIdentifier: "ToView") as? ToViewController else { return }
         toViewController.labelText = "This is second activity, but provided from FROM activity"
         present(toViewController, animated: true)
     }

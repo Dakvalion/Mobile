@@ -13,15 +13,6 @@ class ToViewController: UIViewController {
     
     @IBOutlet weak var label: UILabel!
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        print("init - ToViewController")
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
     override func loadView() {
         super.loadView()
         print("loadView - ToViewController")
