@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e4X-Hv-pb3">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -49,7 +50,7 @@
                             <constraint firstItem="Ovi-Id-zfK" firstAttribute="leading" secondItem="u6W-mE-MX2" secondAttribute="leading" constant="16" id="vlk-kJ-zQ0"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" selectedImage="book.fill" catalog="system" id="cy4-dB-zgi"/>
+                    <tabBarItem key="tabBarItem" title="Book" image="book.fill" catalog="system" selectedImage="book.fill" id="cy4-dB-zgi"/>
                     <navigationItem key="navigationItem" title="Любимая книга" id="7Ki-MU-1MJ"/>
                     <connections>
                         <outlet property="button" destination="2Q0-3a-BQY" id="RPR-4H-hNK"/>
@@ -117,11 +118,11 @@
             </objects>
             <point key="canvasLocation" x="2250" y="296"/>
         </scene>
-        <!--Item-->
+        <!--Book-->
         <scene sceneID="vaY-vE-mij">
             <objects>
                 <navigationController id="4fg-JE-bHN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="book.fill" catalog="system" id="AgT-jA-84r"/>
+                    <tabBarItem key="tabBarItem" title="Book" image="book" catalog="system" selectedImage="book.fill" id="AgT-jA-84r"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="xsU-f8-xk0">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -179,119 +180,200 @@
                             <constraint firstItem="euZ-gT-Mv6" firstAttribute="centerY" secondItem="Pah-fs-foe" secondAttribute="centerY" id="g1B-UF-W9V"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="mappin.circle.fill" catalog="system" id="qTR-Nl-dIz"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="mappin.circle" catalog="system" selectedImage="mappin.circle.fill" id="qTR-Nl-dIz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O83-yt-uEC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1" y="1035"/>
         </scene>
-        <!--Second Fragment View Controller-->
-        <scene sceneID="XWF-jP-mXZ">
+        <!--Second Fragment-->
+        <scene sceneID="w7d-e2-dNb">
             <objects>
-                <viewController storyboardIdentifier="SecondFragment" id="m2o-Jc-VbW" customClass="SecondFragmentViewController" customModule="Lesson3" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="fYf-gt-n4z">
+                <viewController storyboardIdentifier="SecondFragment" title="Second Fragment" id="kAg-wc-Xno" customClass="SecondFragmentViewController" customModule="Lesson3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fx2-DC-jHl">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Second Fragment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9XV-nM-jpa">
-                                <rect key="frame" x="16" y="103" width="136" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second container" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydQ-JX-Kep">
+                                <rect key="frame" x="16" y="103" width="361" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="030-c6-4K4"/>
-                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <viewLayoutGuide key="safeArea" id="kWT-jD-DNZ"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                        <constraints>
+                            <constraint firstItem="kWT-jD-DNZ" firstAttribute="trailing" secondItem="ydQ-JX-Kep" secondAttribute="trailing" constant="16" id="GtP-qP-K7Z"/>
+                            <constraint firstItem="ydQ-JX-Kep" firstAttribute="leading" secondItem="kWT-jD-DNZ" secondAttribute="leading" constant="16" id="eng-Kr-gS4"/>
+                            <constraint firstItem="ydQ-JX-Kep" firstAttribute="top" secondItem="kWT-jD-DNZ" secondAttribute="top" id="zbQ-if-PGg"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5K9-mu-v7l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="usS-IM-xor" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="902" y="2347"/>
+            <point key="canvasLocation" x="2250" y="2442"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="oAa-jx-2ko">
+        <!--Art-->
+        <scene sceneID="AGf-Nq-OEf">
             <objects>
-                <splitViewController allowDoubleColumnStyle="YES" primaryBackgroundStyle="sidebar" id="64c-Ju-s7X" customClass="SplitVC" customModule="Lesson3" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="8XY-Wo-RJt"/>
-                </splitViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oGa-3K-SEL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="CaN-oK-510" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Art" image="paintbrush.pointed" catalog="system" selectedImage="paintbrush.pointed.fill" id="OyI-Ua-ct9"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="w85-Lf-aqy">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dh7-xu-fDG" kind="relationship" relationship="rootViewController" id="FFg-Ok-mdE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6tr-cM-xJY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="3062"/>
+            <point key="canvasLocation" x="1" y="3130"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ezY-h8-JZk">
+        <!--Блинчики-->
+        <scene sceneID="Eff-Gb-bZT">
             <objects>
-                <navigationController id="9Wb-mJ-Mqi" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XBl-Vn-MVs">
+                <viewController title="Блинчики" id="dh7-xu-fDG" customClass="RecipeViewController" customModule="Lesson3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gZm-cv-7A4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="acril" translatesAutoresizingMaskIntoConstraints="NO" id="xlh-P5-D6n">
+                                <rect key="frame" x="16" y="155" width="361" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="CR5-4r-kB8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OP-Ic-Wsu">
+                                <rect key="frame" x="16" y="411" width="361" height="92"/>
+                                <string key="text">На занятии вы познакомитесь с возможностями, который открывает жидкий акрил. Сами создадите необычную абстрактную картину, похожую на планету. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WMA-tc-Ayv">
+                                <rect key="frame" x="0.0" y="520" width="377" height="249"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="249" id="hwK-Xn-FCC"/>
+                                </constraints>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsC-tV-L9c">
+                                <rect key="frame" x="16" y="515" width="361" height="1"/>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="rFb-w3-64b"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8vl-AM-BCk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xlh-P5-D6n" firstAttribute="top" secondItem="8vl-AM-BCk" secondAttribute="top" id="1iY-62-lPX"/>
+                            <constraint firstItem="WMA-tc-Ayv" firstAttribute="leading" secondItem="8vl-AM-BCk" secondAttribute="leading" id="5Qq-9y-GIe"/>
+                            <constraint firstItem="FsC-tV-L9c" firstAttribute="trailing" secondItem="gZm-cv-7A4" secondAttribute="trailingMargin" id="ARy-eR-v03"/>
+                            <constraint firstItem="xlh-P5-D6n" firstAttribute="leading" secondItem="8vl-AM-BCk" secondAttribute="leading" constant="16" id="B3D-rZ-ULk"/>
+                            <constraint firstItem="WMA-tc-Ayv" firstAttribute="top" secondItem="FsC-tV-L9c" secondAttribute="bottom" constant="4" id="DDg-au-MGE"/>
+                            <constraint firstItem="8OP-Ic-Wsu" firstAttribute="leading" secondItem="8vl-AM-BCk" secondAttribute="leading" constant="16" id="LeY-ml-LOd"/>
+                            <constraint firstItem="8OP-Ic-Wsu" firstAttribute="top" secondItem="xlh-P5-D6n" secondAttribute="bottom" constant="16" id="Mb0-9V-3d9"/>
+                            <constraint firstItem="8vl-AM-BCk" firstAttribute="trailing" secondItem="xlh-P5-D6n" secondAttribute="trailing" constant="16" id="SUP-Bi-RR2"/>
+                            <constraint firstItem="8vl-AM-BCk" firstAttribute="trailing" secondItem="WMA-tc-Ayv" secondAttribute="trailing" constant="16" id="Uc4-PT-tp3"/>
+                            <constraint firstItem="FsC-tV-L9c" firstAttribute="leading" secondItem="gZm-cv-7A4" secondAttribute="leadingMargin" id="WgP-e1-uKd"/>
+                            <constraint firstItem="8vl-AM-BCk" firstAttribute="bottom" secondItem="WMA-tc-Ayv" secondAttribute="bottom" id="dGb-jD-R03"/>
+                            <constraint firstItem="8vl-AM-BCk" firstAttribute="trailing" secondItem="8OP-Ic-Wsu" secondAttribute="trailing" constant="16" id="dak-3U-o9o"/>
+                            <constraint firstItem="FsC-tV-L9c" firstAttribute="top" secondItem="8OP-Ic-Wsu" secondAttribute="bottom" constant="12" id="kOB-VZ-Aq6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Арт-терапия" id="HZw-HX-mgI"/>
+                    <connections>
+                        <outlet property="imageView" destination="xlh-P5-D6n" id="q6y-Fr-z5Z"/>
+                        <outlet property="tableView" destination="WMA-tc-Ayv" id="6VH-vL-Y7R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vec-9A-6dl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1209.9236641221373" y="3129.5774647887324"/>
+        </scene>
+        <!--First Fragment-->
+        <scene sceneID="w4v-Q3-YVx">
+            <objects>
+                <viewController storyboardIdentifier="FirstFragment" title="First Fragment" id="Hc0-yk-6gs" customClass="FirstFragmentViewController" customModule="Lesson3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ytT-95-dvt">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNX-ab-hNC">
+                                <rect key="frame" x="16" y="103" width="361" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Second Fragment"/>
+                                <connections>
+                                    <action selector="secondFragmentButtonAction:" destination="Hc0-yk-6gs" eventType="touchUpInside" id="0a2-0J-Iju"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello blank controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHd-e7-dzf">
+                                <rect key="frame" x="16" y="146" width="361" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NsW-wY-qun"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <constraints>
+                            <constraint firstItem="cNX-ab-hNC" firstAttribute="top" secondItem="NsW-wY-qun" secondAttribute="top" id="2R2-7b-0vX"/>
+                            <constraint firstItem="ZHd-e7-dzf" firstAttribute="leading" secondItem="NsW-wY-qun" secondAttribute="leading" constant="16" id="ErW-AY-1H0"/>
+                            <constraint firstItem="cNX-ab-hNC" firstAttribute="leading" secondItem="NsW-wY-qun" secondAttribute="leading" constant="16" id="IRC-1S-lH7"/>
+                            <constraint firstItem="NsW-wY-qun" firstAttribute="trailing" secondItem="cNX-ab-hNC" secondAttribute="trailing" constant="16" id="TVr-7p-Lh9"/>
+                            <constraint firstItem="NsW-wY-qun" firstAttribute="trailing" secondItem="ZHd-e7-dzf" secondAttribute="trailing" constant="16" id="Vyz-B0-HLv"/>
+                            <constraint firstItem="ZHd-e7-dzf" firstAttribute="top" secondItem="cNX-ab-hNC" secondAttribute="bottom" constant="8" id="a3x-RO-Lk0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="secondFragmentButton" destination="cNX-ab-hNC" id="sTk-nm-UeO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dpp-rT-05O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2250" y="1726"/>
+        </scene>
+        <!--Split (Fragment)-->
+        <scene sceneID="RHy-fv-A7X">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WFI-27-Hbn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController id="J4u-gF-XEJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Split (Fragment)" image="uiwindow.split.2x1" catalog="system" id="byk-nr-0Z1"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kat-1E-3wM">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="pqW-Js-Axf" kind="relationship" relationship="rootViewController" id="RDF-Om-LgJ"/>
+                        <segue destination="7Gz-ye-hgP" kind="relationship" relationship="rootViewController" id="NZD-AK-pv4"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wSN-F6-Sqn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="1703"/>
+            <point key="canvasLocation" x="1" y="2024"/>
         </scene>
-        <!--First Fragment View Controller-->
-        <scene sceneID="WNu-YE-C8k">
+        <!--Split (Fragment)-->
+        <scene sceneID="1wM-yV-rMi">
             <objects>
-                <viewController storyboardIdentifier="FirstFragment" id="pqW-Js-Axf" customClass="FirstFragmentViewController" customModule="Lesson3" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Jk0-Wo-pHf">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello blank fragment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azm-75-GWO">
-                                <rect key="frame" x="16" y="103" width="159" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fh2-Pp-fk5">
-                                <rect key="frame" x="16" y="140" width="112" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Fragment 2"/>
-                                <connections>
-                                    <action selector="secondFragmentButtonAction:" destination="pqW-Js-Axf" eventType="touchUpInside" id="aod-e4-jHT"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="p4l-8r-Qez"/>
-                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
-                        <constraints>
-                            <constraint firstItem="azm-75-GWO" firstAttribute="leading" secondItem="p4l-8r-Qez" secondAttribute="leading" constant="16" id="5Qk-hH-frM"/>
-                            <constraint firstItem="fh2-Pp-fk5" firstAttribute="leading" secondItem="p4l-8r-Qez" secondAttribute="leading" constant="16" id="AXg-J8-MeR"/>
-                            <constraint firstItem="fh2-Pp-fk5" firstAttribute="top" secondItem="azm-75-GWO" secondAttribute="bottom" constant="16" id="rv3-AZ-3RP"/>
-                            <constraint firstItem="azm-75-GWO" firstAttribute="top" secondItem="p4l-8r-Qez" secondAttribute="top" id="viF-kN-yx4"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Vda-QA-yxS"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FbU-U0-zKs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1799" y="1703"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="Uwh-J2-8UU">
-            <objects>
-                <splitViewController storyboardIdentifier="SplitFragment" allowDoubleColumnStyle="YES" primaryBackgroundStyle="sidebar" id="qJH-Pd-0MU" customClass="SplitViewController" customModule="Lesson3" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="okA-DC-yeo"/>
+                <splitViewController allowDoubleColumnStyle="YES" preferredDisplayMode="twoBeside" primaryBackgroundStyle="sidebar" id="7Gz-ye-hgP" customClass="SplitViewController" customModule="Lesson3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Split (Fragment)" image="uiwindow.split.2x1" catalog="system" selectedImage="uiwindow.split.2x1" id="rNK-y2-u9u"/>
+                    <navigationItem key="navigationItem" id="sKZ-bN-cce"/>
                     <connections>
-                        <segue destination="9Wb-mJ-Mqi" kind="relationship" relationship="masterViewController" id="D4Z-dU-z9g"/>
-                        <segue destination="m2o-Jc-VbW" kind="relationship" relationship="detailViewController" id="bxh-xT-agv"/>
+                        <segue destination="kAg-wc-Xno" kind="relationship" relationship="detailViewController" id="xs5-Dt-LCn"/>
+                        <segue destination="Hc0-yk-6gs" kind="relationship" relationship="masterViewController" id="fqA-cu-XFL"/>
                     </connections>
                 </splitViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eam-06-Via" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M5j-Bt-lQE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1" y="2008"/>
+            <point key="canvasLocation" x="1210" y="2024"/>
         </scene>
         <!--Item-->
         <scene sceneID="dcf-ek-REf">
             <objects>
                 <navigationController id="tyk-KW-8Fi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="arrow.right.doc.on.clipboard" catalog="system" id="ti9-6S-Llq"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="arrow.right.doc.on.clipboard" catalog="system" selectedImage="arrow.right.doc.on.clipboard" id="ti9-6S-Llq"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="J43-H6-dO0">
                         <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -325,7 +407,7 @@
                         <viewLayoutGuide key="safeArea" id="qHk-jO-kbP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" selectedImage="arrow.right.doc.on.clipboard" catalog="system" id="NTe-s3-iQp"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="arrow.right.doc.on.clipboard" catalog="system" selectedImage="arrow.right.doc.on.clipboard" id="NTe-s3-iQp"/>
                     <navigationItem key="navigationItem" id="5f4-Tm-emx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOb-Z6-Q1B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -382,8 +464,8 @@
                         <segue destination="tyk-KW-8Fi" kind="relationship" relationship="viewControllers" id="N5o-yO-M6h"/>
                         <segue destination="4fg-JE-bHN" kind="relationship" relationship="viewControllers" id="9Yc-He-zzD"/>
                         <segue destination="pdm-bl-Uf3" kind="relationship" relationship="viewControllers" id="ilC-fM-hb0"/>
-                        <segue destination="qJH-Pd-0MU" kind="relationship" relationship="viewControllers" id="YfY-TE-PRj"/>
-                        <segue destination="64c-Ju-s7X" kind="relationship" relationship="viewControllers" id="BIj-Rf-nmL"/>
+                        <segue destination="J4u-gF-XEJ" kind="relationship" relationship="viewControllers" id="9We-zl-3KE"/>
+                        <segue destination="CaN-oK-510" kind="relationship" relationship="viewControllers" id="WLG-gb-teJ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kj5-rn-EqE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -392,20 +474,29 @@
         </scene>
     </scenes>
     <resources>
+        <image name="acril" width="496" height="330"/>
         <image name="arrow.right.doc.on.clipboard" catalog="system" width="116" height="128"/>
+        <image name="book" catalog="system" width="128" height="99"/>
         <image name="book.fill" catalog="system" width="128" height="95"/>
+        <image name="mappin.circle" catalog="system" width="128" height="123"/>
         <image name="mappin.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="paintbrush.pointed" catalog="system" width="128" height="118"/>
+        <image name="paintbrush.pointed.fill" catalog="system" width="128" height="118"/>
+        <image name="uiwindow.split.2x1" catalog="system" width="128" height="93"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
