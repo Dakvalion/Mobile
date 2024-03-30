@@ -2,7 +2,7 @@
 //  BookDetailsViewController.swift
 //  Lesson3
 //
-//  Created by Егор Бадмаев on 27.03.2024.
+//  Created by Дарья Никитина on 27.03.2024.
 //
 
 import UIKit
@@ -13,11 +13,7 @@ class BookDetailsViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var button: UIButton!
-    var state: State = .empty {
-        didSet {
-            textView.text = state.text
-        }
-    }
+    var state: State = .empty
     var callback: ((BookState) -> Void)?
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,6 +29,7 @@ class BookDetailsViewController: UIViewController {
         
         callback?(.book(name: bookName))
         state = .book(name: bookName)
+        textView.text = state.text
     }
 }
 
