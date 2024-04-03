@@ -17,6 +17,7 @@
 		103F049A2BA6E71D003A37D4 /* DialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F04992BA6E71D003A37D4 /* DialogViewController.swift */; };
 		103F049C2BA6FCD0003A37D4 /* ToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103F049B2BA6FCD0003A37D4 /* ToViewController.swift */; };
 		107697552BB602CD007E6826 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 107697542BB602CC007E6826 /* README.md */; };
+		F02EDC2C2BBD670300963F9B /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02EDC2B2BBD670300963F9B /* NotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		103F04992BA6E71D003A37D4 /* DialogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogViewController.swift; sourceTree = "<group>"; };
 		103F049B2BA6FCD0003A37D4 /* ToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToViewController.swift; sourceTree = "<group>"; };
 		107697542BB602CC007E6826 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F02EDC2B2BBD670300963F9B /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				103F04992BA6E71D003A37D4 /* DialogViewController.swift */,
 				103F049B2BA6FCD0003A37D4 /* ToViewController.swift */,
 				107697542BB602CC007E6826 /* README.md */,
+				F02EDC2B2BBD670300963F9B /* NotificationViewController.swift */,
 			);
 			path = SecondPractice;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				103F04882BA6E67A003A37D4 /* FromViewController.swift in Sources */,
 				103F049C2BA6FCD0003A37D4 /* ToViewController.swift in Sources */,
 				103F04842BA6E67A003A37D4 /* AppDelegate.swift in Sources */,
+				F02EDC2C2BBD670300963F9B /* NotificationViewController.swift in Sources */,
 				103F049A2BA6E71D003A37D4 /* DialogViewController.swift in Sources */,
 				103F04862BA6E67A003A37D4 /* SceneDelegate.swift in Sources */,
 				103F04982BA6E6D3003A37D4 /* WebViewController.swift in Sources */,

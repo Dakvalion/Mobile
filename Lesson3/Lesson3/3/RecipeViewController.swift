@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class RecipeViewController: UIViewController {
     
@@ -25,6 +26,14 @@ class RecipeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    }
+    
+    @IBAction func appointmentButtonAction(_ sender: Any) {
+        guard let url = URL(string: "https://zuart.ru/msk/mk/fluidart")
+        else { return }
+        
+        let vc = SFSafariViewController(url: url)
+        present(vc, animated: true)
     }
 }
 

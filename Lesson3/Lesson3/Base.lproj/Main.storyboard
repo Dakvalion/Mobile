@@ -246,43 +246,40 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OP-Ic-Wsu">
-                                <rect key="frame" x="16" y="411" width="361" height="92"/>
+                                <rect key="frame" x="16" y="411" width="361" height="81.333333333333314"/>
                                 <string key="text">На занятии вы познакомитесь с возможностями, который открывает жидкий акрил. Сами создадите необычную абстрактную картину, похожую на планету. </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WMA-tc-Ayv">
-                                <rect key="frame" x="0.0" y="520" width="377" height="249"/>
+                                <rect key="frame" x="0.0" y="539.33333333333337" width="377" height="229.66666666666663"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="249" id="hwK-Xn-FCC"/>
-                                </constraints>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsC-tV-L9c">
-                                <rect key="frame" x="16" y="515" width="361" height="1"/>
-                                <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="rFb-w3-64b"/>
-                                </constraints>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9tf-CE-sBX">
+                                <rect key="frame" x="15.999999999999993" y="496.33333333333326" width="115.33333333333331" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Записаться"/>
+                                <connections>
+                                    <action selector="appointmentButtonAction:" destination="dh7-xu-fDG" eventType="touchUpInside" id="JBd-as-PEV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8vl-AM-BCk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xlh-P5-D6n" firstAttribute="top" secondItem="8vl-AM-BCk" secondAttribute="top" id="1iY-62-lPX"/>
                             <constraint firstItem="WMA-tc-Ayv" firstAttribute="leading" secondItem="8vl-AM-BCk" secondAttribute="leading" id="5Qq-9y-GIe"/>
-                            <constraint firstItem="FsC-tV-L9c" firstAttribute="trailing" secondItem="gZm-cv-7A4" secondAttribute="trailingMargin" id="ARy-eR-v03"/>
+                            <constraint firstItem="9tf-CE-sBX" firstAttribute="top" secondItem="8OP-Ic-Wsu" secondAttribute="bottom" constant="4" id="72I-hP-py7"/>
                             <constraint firstItem="xlh-P5-D6n" firstAttribute="leading" secondItem="8vl-AM-BCk" secondAttribute="leading" constant="16" id="B3D-rZ-ULk"/>
-                            <constraint firstItem="WMA-tc-Ayv" firstAttribute="top" secondItem="FsC-tV-L9c" secondAttribute="bottom" constant="4" id="DDg-au-MGE"/>
                             <constraint firstItem="8OP-Ic-Wsu" firstAttribute="leading" secondItem="8vl-AM-BCk" secondAttribute="leading" constant="16" id="LeY-ml-LOd"/>
                             <constraint firstItem="8OP-Ic-Wsu" firstAttribute="top" secondItem="xlh-P5-D6n" secondAttribute="bottom" constant="16" id="Mb0-9V-3d9"/>
+                            <constraint firstItem="WMA-tc-Ayv" firstAttribute="top" secondItem="9tf-CE-sBX" secondAttribute="bottom" constant="8" id="PFk-9Q-tRi"/>
                             <constraint firstItem="8vl-AM-BCk" firstAttribute="trailing" secondItem="xlh-P5-D6n" secondAttribute="trailing" constant="16" id="SUP-Bi-RR2"/>
                             <constraint firstItem="8vl-AM-BCk" firstAttribute="trailing" secondItem="WMA-tc-Ayv" secondAttribute="trailing" constant="16" id="Uc4-PT-tp3"/>
-                            <constraint firstItem="FsC-tV-L9c" firstAttribute="leading" secondItem="gZm-cv-7A4" secondAttribute="leadingMargin" id="WgP-e1-uKd"/>
+                            <constraint firstItem="9tf-CE-sBX" firstAttribute="leading" secondItem="8vl-AM-BCk" secondAttribute="leading" constant="16" id="alQ-6w-EvY"/>
                             <constraint firstItem="8vl-AM-BCk" firstAttribute="bottom" secondItem="WMA-tc-Ayv" secondAttribute="bottom" id="dGb-jD-R03"/>
                             <constraint firstItem="8vl-AM-BCk" firstAttribute="trailing" secondItem="8OP-Ic-Wsu" secondAttribute="trailing" constant="16" id="dak-3U-o9o"/>
-                            <constraint firstItem="FsC-tV-L9c" firstAttribute="top" secondItem="8OP-Ic-Wsu" secondAttribute="bottom" constant="12" id="kOB-VZ-Aq6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Арт-терапия" id="HZw-HX-mgI"/>
@@ -340,7 +337,6 @@
         <!--Split (Fragment)-->
         <scene sceneID="RHy-fv-A7X">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WFI-27-Hbn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="J4u-gF-XEJ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Split (Fragment)" image="uiwindow.split.2x1" catalog="system" id="byk-nr-0Z1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kat-1E-3wM">
@@ -351,6 +347,7 @@
                         <segue destination="7Gz-ye-hgP" kind="relationship" relationship="rootViewController" id="NZD-AK-pv4"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WFI-27-Hbn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1" y="2024"/>
         </scene>
@@ -489,14 +486,11 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemMintColor">
-            <color red="0.0" green="0.78039215689999997" blue="0.74509803919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
