@@ -2,7 +2,7 @@
 //  DataThreadViewController.swift
 //  Lesson4
 //
-//  Created by Егор Бадмаев on 13.04.2024.
+//  Created by Дарья Никитина on 13.04.2024.
 //
 
 import UIKit

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		106F105F2BD1B38A00C7B376 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 106F105E2BD1B38A00C7B376 /* README.md */; };
 		F01BDC042BD17BBA0006C5E3 /* CryptoLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01BDC032BD17BBA0006C5E3 /* CryptoLoaderViewController.swift */; };
 		F01BDC072BD194BA0006C5E3 /* WorkManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01BDC062BD194BA0006C5E3 /* WorkManagerViewController.swift */; };
 		F01BDC092BD195050006C5E3 /* UploadWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01BDC082BD195050006C5E3 /* UploadWorker.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		106F105E2BD1B38A00C7B376 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F01BDC032BD17BBA0006C5E3 /* CryptoLoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoLoaderViewController.swift; sourceTree = "<group>"; };
 		F01BDC062BD194BA0006C5E3 /* WorkManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkManagerViewController.swift; sourceTree = "<group>"; };
 		F01BDC082BD195050006C5E3 /* UploadWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadWorker.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				F0CEEB052BB9FAA400858CC4 /* Assets.xcassets */,
 				F0CEEB072BB9FAA400858CC4 /* LaunchScreen.storyboard */,
 				F0CEEB0A2BB9FAA400858CC4 /* Info.plist */,
+				106F105E2BD1B38A00C7B376 /* README.md */,
 			);
 			path = Lesson4;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			files = (
 				F0CEEB092BB9FAA400858CC4 /* LaunchScreen.storyboard in Resources */,
 				F0CEEB062BB9FAA400858CC4 /* Assets.xcassets in Resources */,
+				106F105F2BD1B38A00C7B376 /* README.md in Resources */,
 				F0CEEB162BB9FB0E00858CC4 /* piano.mp3 in Resources */,
 				F0CEEB042BB9FAA200858CC4 /* Main.storyboard in Resources */,
 			);

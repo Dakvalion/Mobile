@@ -2,7 +2,7 @@
 //  MyLooper.swift
 //  Lesson4
 //
-//  Created by Егор Бадмаев on 14.04.2024.
+//  Created by Дарья Никитина on 14.04.2024.
 //
 
 import Foundation

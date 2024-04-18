@@ -2,7 +2,7 @@
 //  MusicPlayer.swift
 //  Lesson4
 //
-//  Created by Егор Бадмаев on 31.03.2024.
+//  Created by Дарья Никитина on 31.03.2024.
 //
 
 import SwiftUI
