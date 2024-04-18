@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dar-E7-C9F">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Music Player-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MusicPlayerViewController" customModule="Lesson4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Music Player" image="music.note.list" catalog="system" id="g7l-GQ-Pgd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="-438"/>
+        </scene>
+        <!--Threads-->
+        <scene sceneID="vlt-S3-uA2">
+            <objects>
+                <viewController id="2K1-1U-Dur" customClass="ThreadsViewController" customModule="Lesson4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i4r-4Q-fPN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="RWI-g4-xyv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Threads" image="chart.bar.doc.horizontal" catalog="system" id="NBP-Vt-kTL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ohP-GE-MWL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="304"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="2Hu-pc-8C4">
+            <objects>
+                <tabBarController id="Dar-E7-C9F" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2Xc-94-BWF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="SiS-CB-3wj"/>
+                        <segue destination="2K1-1U-Dur" kind="relationship" relationship="viewControllers" id="4BV-zi-dpW"/>
+                        <segue destination="Wns-pu-GmI" kind="relationship" relationship="viewControllers" id="re0-pz-UcN"/>
+                        <segue destination="ekI-W1-oQq" kind="relationship" relationship="viewControllers" id="hyL-9y-HSd"/>
+                        <segue destination="ENO-Dv-bEF" kind="relationship" relationship="viewControllers" id="BEm-mj-d2S"/>
+                        <segue destination="sc0-NN-7fi" kind="relationship" relationship="viewControllers" id="Q2O-Wp-iGt"/>
+                        <segue destination="EPq-bc-lbH" kind="relationship" relationship="viewControllers" id="iaz-Nl-GyG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AQa-4O-xu3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-837" y="1013"/>
+        </scene>
+        <!--Data Thread-->
+        <scene sceneID="tM4-kT-GBa">
+            <objects>
+                <viewController id="Wns-pu-GmI" customClass="DataThreadViewController" customModule="Lesson4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4pm-e7-CMU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LYd-ah-qpe">
+                                <rect key="frame" x="16" y="276" width="361" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="WwY-Qu-4wk"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aLu-tz-rv3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LYd-ah-qpe" firstAttribute="leading" secondItem="aLu-tz-rv3" secondAttribute="leading" constant="16" id="Ams-EG-PZj"/>
+                            <constraint firstItem="aLu-tz-rv3" firstAttribute="trailing" secondItem="LYd-ah-qpe" secondAttribute="trailing" constant="16" id="Gpi-jh-pEu"/>
+                            <constraint firstItem="LYd-ah-qpe" firstAttribute="centerY" secondItem="4pm-e7-CMU" secondAttribute="centerY" id="H2O-QA-IXx"/>
+                            <constraint firstItem="LYd-ah-qpe" firstAttribute="centerX" secondItem="4pm-e7-CMU" secondAttribute="centerX" id="fvx-F5-Rn8"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Data Thread" image="book.pages" catalog="system" id="Ree-0t-V2a"/>
+                    <connections>
+                        <outlet property="textView" destination="LYd-ah-qpe" id="hzZ-iW-KHP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5dj-vz-R1V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="1013"/>
+        </scene>
+        <!--Looper-->
+        <scene sceneID="UzT-Hk-RPb">
+            <objects>
+                <viewController id="ekI-W1-oQq" customClass="LooperViewController" customModule="Lesson4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YzM-66-YaJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="8ye-dI-jhj">
+                                <rect key="frame" x="76.666666666666686" y="361" width="240" height="130.33333333333337"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="&lt; ... &gt;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6mg-Rl-rFL">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="28"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="4Ie-Gz-57M"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите ваш возраст" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Otx-4Q-Zy1">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите вашу должность" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iK5-4F-DRC">
+                                        <rect key="frame" x="0.0" y="62" width="240" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtf-ld-DU1">
+                                        <rect key="frame" x="0.0" y="96" width="240" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                        <connections>
+                                            <action selector="onClick:" destination="ekI-W1-oQq" eventType="touchUpInside" id="abW-MS-ffU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iku-T3-Mbl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8ye-dI-jhj" firstAttribute="centerX" secondItem="YzM-66-YaJ" secondAttribute="centerX" id="Fp4-iP-Lg1"/>
+                            <constraint firstItem="8ye-dI-jhj" firstAttribute="centerY" secondItem="YzM-66-YaJ" secondAttribute="centerY" id="rRC-Gm-nbv"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Looper" image="repeat" catalog="system" id="CS3-tP-120"/>
+                    <connections>
+                        <outlet property="ageTextField" destination="Otx-4Q-Zy1" id="01u-Xi-vmg"/>
+                        <outlet property="gradeTextField" destination="iK5-4F-DRC" id="3w5-KD-vNv"/>
+                        <outlet property="mireaTextView" destination="6mg-Rl-rFL" id="7zG-3o-THM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nU6-h6-A9R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="1743"/>
+        </scene>
+        <!--Crypto Loader-->
+        <scene sceneID="BN6-kD-FMB">
+            <objects>
+                <viewController id="ENO-Dv-bEF" customClass="CryptoLoaderViewController" customModule="Lesson4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KHn-kY-bld">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hbv-mL-YeI">
+                                <rect key="frame" x="73.666666666666671" y="382" width="245.66666666666663" height="88.333333333333314"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Введите фразу для шифрования" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OPh-Tp-co2">
+                                        <rect key="frame" x="0.0" y="0.0" width="245.66666666666666" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbE-sV-4ZH">
+                                        <rect key="frame" x="0.0" y="54" width="245.66666666666666" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Зашифровать фразу"/>
+                                        <connections>
+                                            <action selector="encryptButtonClick:" destination="ENO-Dv-bEF" eventType="touchUpInside" id="kCo-Cv-4hm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qJ4-PI-sHv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hbv-mL-YeI" firstAttribute="centerY" secondItem="KHn-kY-bld" secondAttribute="centerY" id="Kdb-AA-rcL"/>
+                            <constraint firstItem="hbv-mL-YeI" firstAttribute="centerX" secondItem="KHn-kY-bld" secondAttribute="centerX" id="rUQ-lk-vz7"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Crypto Loader" image="lock.shield" catalog="system" id="OAf-Mu-CwJ"/>
+                    <connections>
+                        <outlet property="textField" destination="OPh-Tp-co2" id="E6h-08-4qz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0RN-lj-SvO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="2430"/>
+        </scene>
+        <!--Work Manager-->
+        <scene sceneID="0p4-CZ-DEC">
+            <objects>
+                <viewController id="sc0-NN-7fi" customClass="WorkManagerViewController" customModule="Lesson4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oXV-5b-fbs">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="zcn-wX-J8f"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Work Manager" image="latch.2.case" catalog="system" id="EHD-q1-C4t"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TSs-5p-aYO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="3129"/>
+        </scene>
+        <!--Worker-->
+        <scene sceneID="4lt-3G-W48">
+            <objects>
+                <viewController id="EPq-bc-lbH" customClass="WorkerViewController" customModule="Lesson4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1ut-NZ-FfQ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tVh-UZ-wqo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Worker" image="arrow.triangle.branch" catalog="system" id="hEj-Ap-CQ1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="06N-P1-IGa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="3806"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.triangle.branch" catalog="system" width="128" height="110"/>
+        <image name="book.pages" catalog="system" width="107" height="128"/>
+        <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
+        <image name="latch.2.case" catalog="system" width="128" height="100"/>
+        <image name="lock.shield" catalog="system" width="128" height="119"/>
+        <image name="music.note.list" catalog="system" width="128" height="115"/>
+        <image name="repeat" catalog="system" width="128" height="98"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
