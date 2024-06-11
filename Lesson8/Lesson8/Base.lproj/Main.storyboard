@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IXO-9U-fZF">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--OSM Maps-->
+        <scene sceneID="frV-c8-9Et">
+            <objects>
+                <viewController id="R5i-gj-nIU" customClass="OSMMapsViewController" customModule="Lesson8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xUd-qV-tgg">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="HSl-aQ-LgX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="OSM Maps" image="map.fill" catalog="system" id="Pgc-JA-e2F"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UYp-0P-oK0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1106" y="391"/>
+        </scene>
+        <!--Yandex Driver-->
+        <scene sceneID="yFe-BV-siS">
+            <objects>
+                <viewController id="KoT-1p-Kao" customClass="YandexDriverViewController" customModule="Lesson8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DGj-Jg-3AJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dzz-66-gu5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Yandex Driver" image="location.north.line.fill" catalog="system" id="18d-04-m4Y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="joR-wY-0dp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1106" y="-244"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="Jp0-qE-3XV">
+            <objects>
+                <viewController storyboardIdentifier="Kremlin" id="5Wi-VF-Mag" customClass="DetailsViewController" customModule="Lesson8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Pb-GH-ATr">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="B1o-oO-GDu">
+                                <rect key="frame" x="16" y="389" width="361" height="74"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iLb-Im-na8">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="33.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eoe-Ls-JNU">
+                                        <rect key="frame" x="0.0" y="53.666666666666686" width="361" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Это была самая интересная и &quot;уникальная&quot; информация" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaf-06-5dN">
+                                <rect key="frame" x="16" y="768.33333333333337" width="361" height="33.666666666666629"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uMh-lQ-shm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uMh-lQ-shm" firstAttribute="bottom" secondItem="gaf-06-5dN" secondAttribute="bottom" constant="16" id="17H-Hp-QbZ"/>
+                            <constraint firstItem="B1o-oO-GDu" firstAttribute="leading" secondItem="uMh-lQ-shm" secondAttribute="leading" constant="16" id="RcJ-fy-auv"/>
+                            <constraint firstItem="gaf-06-5dN" firstAttribute="leading" secondItem="uMh-lQ-shm" secondAttribute="leading" constant="16" id="S2P-yo-VWe"/>
+                            <constraint firstItem="uMh-lQ-shm" firstAttribute="trailing" secondItem="gaf-06-5dN" secondAttribute="trailing" constant="16" id="dDl-t6-Lus"/>
+                            <constraint firstItem="B1o-oO-GDu" firstAttribute="centerX" secondItem="4Pb-GH-ATr" secondAttribute="centerX" id="lw7-eK-cws"/>
+                            <constraint firstItem="uMh-lQ-shm" firstAttribute="trailing" secondItem="B1o-oO-GDu" secondAttribute="trailing" constant="16" id="u3D-v6-r0Z"/>
+                            <constraint firstItem="B1o-oO-GDu" firstAttribute="centerY" secondItem="4Pb-GH-ATr" secondAttribute="centerY" id="zSQ-jz-RRf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="Eoe-Ls-JNU" id="wBK-j1-2Sn"/>
+                        <outlet property="titleLabel" destination="iLb-Im-na8" id="ujP-Cv-1kS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hkN-Fi-uCY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-146" y="-244"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="4Vk-Kg-4kq">
+            <objects>
+                <tabBarController id="IXO-9U-fZF" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="asn-a2-NHE">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Qyc-Ck-7kh"/>
+                        <segue destination="KoT-1p-Kao" kind="relationship" relationship="viewControllers" id="Epe-jf-c0y"/>
+                        <segue destination="R5i-gj-nIU" kind="relationship" relationship="viewControllers" id="81W-P7-m7s"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wrM-io-J0I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2011" y="59"/>
+        </scene>
+        <!--Yandex Maps-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="YandexMapsViewController" customModule="Lesson8" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Yandex Maps" image="location.fill" catalog="system" id="ajY-Xl-wAz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1106" y="-883"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="location.fill" catalog="system" width="128" height="119"/>
+        <image name="location.north.line.fill" catalog="system" width="84" height="128"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
