@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10F964042C1BDC150034F463 /* Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F964032C1BDC150034F463 /* Worker.swift */; };
 		F09B7DE02C1A707C007E08DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B7DDF2C1A707C007E08DB /* AppDelegate.swift */; };
 		F09B7DE22C1A707C007E08DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09B7DE12C1A707C007E08DB /* SceneDelegate.swift */; };
 		F09B7DE72C1A707C007E08DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F09B7DE52C1A707C007E08DB /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10F964032C1BDC150034F463 /* Worker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Worker.swift; sourceTree = "<group>"; };
 		F09B7DDC2C1A707C007E08DB /* MireaProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MireaProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F09B7DDF2C1A707C007E08DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F09B7DE12C1A707C007E08DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +124,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10F964022C1BDC020034F463 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				F09B7E062C1A7D84007E08DB /* WorkerViewController.swift */,
+				10F964032C1BDC150034F463 /* Worker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
 		F09B7DD32C1A707C007E08DB = {
 			isa = PBXGroup;
 			children = (
@@ -150,7 +161,7 @@
 				F09B7DED2C1A707D007E08DB /* Info.plist */,
 				F09B7E012C1A7B25007E08DB /* GoogleService-Info.plist */,
 				F09B7DF42C1A779E007E08DB /* RecipeViewController.swift */,
-				F09B7E062C1A7D84007E08DB /* WorkerViewController.swift */,
+				10F964022C1BDC020034F463 /* Worker */,
 				F09B7E082C1A7FD7007E08DB /* Lesson5 */,
 				F09B7E0D2C1A8407007E08DB /* Lesson6 */,
 				F09B7E122C1A87BB007E08DB /* Firebase */,
@@ -306,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F09B7E162C1A87BB007E08DB /* MainPageViewController.swift in Sources */,
+				10F964042C1BDC150034F463 /* Worker.swift in Sources */,
 				F09B7E0C2C1A7FD7007E08DB /* ImageRotatorViewController.swift in Sources */,
 				F09B7E0B2C1A7FD7007E08DB /* AudioRecordViewController.swift in Sources */,
 				F09B7DE02C1A707C007E08DB /* AppDelegate.swift in Sources */,

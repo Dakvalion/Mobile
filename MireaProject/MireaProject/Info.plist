@@ -2,6 +2,16 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSUserNotificationsUsageDescription</key>
+	<string>Приложение и я слёзно умоляем Вас дать разрешение на доступ к уведомлениям.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Приложение и я слёзно умоляем Вас дать разрешение на доступ к микрофону.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Приложение и я слёзно умоляем Вас дать разрешение на доступ к галерее.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Приложение и я слёзно умоляем Вас дать разрешение на доступ к камере.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Приложение и я слёзно умоляем Вас дать разрешение на доступ к геолокации.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

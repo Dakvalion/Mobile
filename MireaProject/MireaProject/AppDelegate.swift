@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  MireaProject
 //
-//  Created by Дарья Никитина on 13.06.2024.
+//  Created by Дарья Никитина on 11.06.2024.
 //
 
 import UIKit
@@ -18,49 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         YMKMapKit.setApiKey("24ff20b5-14a6-464a-8176-b2a1e6acea99")
         YMKMapKit.sharedInstance()
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: "notifyUser", using: nil) { task in
-            guard let task = task as? BGAppRefreshTask else { return }
-            self.createTask(task: task)
-        }
         FirebaseApp.configure()
         return true
-    }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        scheduleAppRefresh()
-    }
-    
-    func createTask(task: BGAppRefreshTask) {
-        Task {
-            let content = UNMutableNotificationContent()
-            content.title = "Mirea"
-            content.body = "Давно тебя не было в уличных гонках! Заходи!"
-            content.sound = UNNotificationSound.default
-            
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-            
-            do {
-                try await UNUserNotificationCenter.current().add(request)
-                let currentCounter = UserDefaults.standard.integer(forKey: "notifyUserCounter")
-                UserDefaults.standard.set(currentCounter + 1, forKey: "notifyUserCounter")
-                task.setTaskCompleted(success: true)
-                scheduleAppRefresh()
-            } catch {
-                print("Ошибка при добавлении уведомления: \(error.localizedDescription)")
-            }
-        }
-    }
-    
-    func scheduleAppRefresh() {
-        let request = BGAppRefreshTaskRequest(identifier: "notifyUserCounter")
-        request.earliestBeginDate = Date(timeIntervalSinceNow: 10)
-        
-        do {
-            try BGTaskScheduler.shared.submit(request)
-        } catch {
-            print("Could not schedule app refresh: \(error)")
-        }
     }
 
     // MARK: UISceneSession Lifecycle

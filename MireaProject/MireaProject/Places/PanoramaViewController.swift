@@ -2,7 +2,7 @@
 //  PanoramaViewController.swift
 //  MireaProject
 //
-//  Created by Егор Бадмаев on 13.06.2024.
+//  Created by Дарья Никитина on 11.06.2024.
 //
 
 import UIKit
