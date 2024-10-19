@@ -14,7 +14,7 @@ public class GetIngredientsUseCase {
         self.ingredientsRepository = ingredientsRepository
     }
 
-    public func execute() -> [Ingredient] {
-        return ingredientsRepository.getIngredientsList()
+    public func execute(completion: @escaping (Result<[Ingredient], Error>) -> Void) {
+        ingredientsRepository.getIngredientsList(completion: completion)
     }
 }

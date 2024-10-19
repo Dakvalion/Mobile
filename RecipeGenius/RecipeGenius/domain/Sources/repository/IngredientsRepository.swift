@@ -8,6 +8,6 @@
 import Foundation
 
 public protocol IngredientsRepository {
-    func getIngredientsList() -> [Ingredient]
+    func getIngredientsList(completion: @escaping (Result<[Ingredient], Error>) -> Void)
     func getIngredient(by name: String) -> Ingredient?
 }

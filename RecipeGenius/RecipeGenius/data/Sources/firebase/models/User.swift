@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class User: Identifiable {
+public class User {
     public let uid: String
     public let name: String
     public let email: String

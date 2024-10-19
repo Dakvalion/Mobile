@@ -46,6 +46,6 @@ public class FirebaseServiceImpl: FirebaseService {
     }
       
     private func mapToData(from user: FirebaseAuth.User) -> User {
-        return User(uid: user.uid)
+        return User(uid: user.uid, name: "", email: "")
     }
 }
