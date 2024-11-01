@@ -13,6 +13,9 @@
 		10EDC3272CB0326F0077A8BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10EDC3252CB0326F0077A8BC /* Main.storyboard */; };
 		10EDC3292CB032720077A8BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10EDC3282CB032720077A8BC /* Assets.xcassets */; };
 		10EDC32C2CB032720077A8BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10EDC32A2CB032720077A8BC /* LaunchScreen.storyboard */; };
+		F0685DC62CD553C200CA8298 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0685DC52CD553C200CA8298 /* LoginViewModel.swift */; };
+		F0685DC82CD5568200CA8298 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0685DC72CD5568200CA8298 /* ViewModelFactory.swift */; };
+		F0685DCA2CD5569100CA8298 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0685DC92CD5569100CA8298 /* ViewModel.swift */; };
 		F0AEE8EC2CB7D993002E8072 /* data in Frameworks */ = {isa = PBXBuildFile; productRef = F0AEE8EB2CB7D993002E8072 /* data */; };
 		F0AEE8EF2CB7D99E002E8072 /* domain in Frameworks */ = {isa = PBXBuildFile; productRef = F0AEE8EE2CB7D99E002E8072 /* domain */; };
 		F0C1BF902CB805D700C7E287 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F0C1BF8F2CB805D700C7E287 /* FirebaseAnalytics */; };
@@ -34,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		109E1E2B2CC3589200FBCB18 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		10EDC31C2CB0326F0077A8BC /* RecipeGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10EDC31F2CB0326F0077A8BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10EDC3212CB0326F0077A8BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +48,9 @@
 		10EDC32D2CB032720077A8BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0096BF62CB7D93800E83806 /* data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = data; sourceTree = "<group>"; };
 		F060C5792CB7D96A00626A1F /* domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = domain; sourceTree = "<group>"; };
+		F0685DC52CD553C200CA8298 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F0685DC72CD5568200CA8298 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		F0685DC92CD5569100CA8298 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		F0C1BFAD2CB8061600C7E287 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +111,7 @@
 				10EDC32A2CB032720077A8BC /* LaunchScreen.storyboard */,
 				10EDC32D2CB032720077A8BC /* Info.plist */,
 				F0C1BFAD2CB8061600C7E287 /* GoogleService-Info.plist */,
+				109E1E2B2CC3589200FBCB18 /* README.md */,
 			);
 			path = RecipeGenius;
 			sourceTree = "<group>";
@@ -112,6 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				10EDC3232CB0326F0077A8BC /* LoginViewController.swift */,
+				F0685DC52CD553C200CA8298 /* LoginViewModel.swift */,
+				F0685DC72CD5568200CA8298 /* ViewModelFactory.swift */,
+				F0685DC92CD5569100CA8298 /* ViewModel.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -212,8 +223,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0685DC62CD553C200CA8298 /* LoginViewModel.swift in Sources */,
 				10EDC3242CB0326F0077A8BC /* LoginViewController.swift in Sources */,
 				10EDC3202CB0326F0077A8BC /* AppDelegate.swift in Sources */,
+				F0685DC82CD5568200CA8298 /* ViewModelFactory.swift in Sources */,
+				F0685DCA2CD5569100CA8298 /* ViewModel.swift in Sources */,
 				10EDC3222CB0326F0077A8BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
