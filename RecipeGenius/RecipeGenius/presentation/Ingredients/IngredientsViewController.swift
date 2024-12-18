@@ -8,6 +8,7 @@
 import UIKit
 import Combine
 import data
+import domain
 
 class IngredientsViewController: UIViewController {
     private let viewModel = IngredientViewModel()
@@ -54,6 +55,16 @@ class IngredientsViewController: UIViewController {
                 self?.collectionView.reloadData()
             }
             .store(in: &cancellables)
+        
+        viewModel.$error
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] (error) in
+                guard let self = self else { return }
+                if let error = error {
+                    print("Ошибка: \(error)")
+                }
+            }
+            .store(in: &cancellables)
     }
 }
 
@@ -68,81 +79,20 @@ extension IngredientsViewController: UICollectionViewDataSource, UICollectionVie
         }
         
         let ingredient = viewModel.ingredients[indexPath.item]
-        cell.configure(with: ingredient)
+        let domainIngredient = domain.Ingredient(
+            name: ingredient.name ?? "",
+            weight: ingredient.weight ?? 0.0,
+            calories: ingredient.calories ?? 0.0,
+            proteins: ingredient.proteins ?? 0.0,
+            fats: ingredient.fats ?? 0.0,
+            carbohydrates: ingredient.carbohydrates ?? 0.0
+        )
+        cell.configure(with: domainIngredient)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let ingredient = viewModel.ingredients[indexPath.item]
         print("Selected ingredient: \(ingredient.name ?? "")")
-    }
-}
-
-class IngredientCollectionViewCell: UICollectionViewCell {
-    private let containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .secondarySystemBackground
-        view.layer.cornerRadius = 12
-        view.layer.masksToBounds = true
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private let nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 16, weight: .medium)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let detailsLabel: UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
-        label.numberOfLines = 0
-        label.textColor = .secondaryLabel
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupUI()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupUI() {
-        contentView.addSubview(containerView)
-        containerView.addSubview(nameLabel)
-        containerView.addSubview(detailsLabel)
-        
-        NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            
-            nameLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12),
-            nameLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 12),
-            nameLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -12),
-            
-            detailsLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
-            detailsLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 12),
-            detailsLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -12),
-            detailsLabel.bottomAnchor.constraint(lessThanOrEqualTo: containerView.bottomAnchor, constant: -12)
-        ])
-    }
-    
-    func configure(with ingredient: Ingredient) {
-        nameLabel.text = ingredient.name
-        
-        let details = """
-            Вес: \(ingredient.weight?.description ?? "N/A") г
-            Калории: \(ingredient.calories?.description ?? "N/A") ккал
-            Б/Ж/У: \(ingredient.proteins?.description ?? "N/A")/\(ingredient.fats?.description ?? "N/A")/\(ingredient.carbohydrates?.description ?? "N/A")
-            """
-        detailsLabel.text = details
     }
 }

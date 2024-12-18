@@ -6,45 +6,34 @@
 //
 
 import Foundation
+import Combine
 import data
 
 class IngredientViewModel: ViewModel {
     @Published private(set) var ingredients: [Ingredient] = []
+    @Published private(set) var error: NetworkError?
+    
+    private var cancellables = Set<AnyCancellable>()
+    private let networkApi = NetworkApi()
     
     override init() {
-        let mockIngredients = [
-            Ingredient(
-                id: "1",
-                name: "Куриная грудка",
-                weight: 100.0,
-                calories: 165.0,
-                proteins: 31.0,
-                fats: 3.6,
-                carbohydrates: 0.0
-            ),
-            Ingredient(
-                id: "2",
-                name: "Овсяные хлопья",
-                weight: 100.0,
-                calories: 379.0,
-                proteins: 13.1,
-                fats: 6.2,
-                carbohydrates: 68.9
-            ),
-            Ingredient(
-                id: "3",
-                name: "Банан",
-                weight: 100.0,
-                calories: 89.0,
-                proteins: 1.1,
-                fats: 0.3,
-                carbohydrates: 22.8
-            )
-        ]
-        self.ingredients = mockIngredients
+        super.init()
+        fetchIngredients()
     }
     
     func addIngredient(_ ingredient: Ingredient) {
         ingredients.append(ingredient)
+    }
+    
+    func fetchIngredients() {
+        networkApi.getIngredients { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let success):
+                self.ingredients = success.data ?? []
+            case .failure(let failure):
+                self.error = failure
+            }
+        }
     }
 }
