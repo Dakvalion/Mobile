@@ -9,9 +9,15 @@ import domain
 
 public class IngredientsRepositoryImpl: IngredientsRepository {
     private let networkApi: INetworkApi
+    private let sharedPreferences: SharedPreferencesService
     
-    public init(networkApi: INetworkApi) {
+    public init(networkApi: INetworkApi, sharedPreferences: SharedPreferencesService) {
         self.networkApi = networkApi
+        self.sharedPreferences = sharedPreferences
+    }
+    
+    public var isLogin: Bool {
+        sharedPreferences.isLogin
     }
     
     public func getIngredientsList(completion: @escaping (Result<[domain.Ingredient], Error>) -> Void) {
@@ -19,45 +25,30 @@ public class IngredientsRepositoryImpl: IngredientsRepository {
             guard let self = self else { return }
             switch result {
             case .success(let serverResponse):
-                completion(.success(mapToDomain(ingredients: serverResponse.data ?? [])))
+                completion(.success(mapToDomain(ingredients: serverResponse.meals ?? [])))
             case .failure(let failure):
                 completion(.failure(failure))
             }
         }
-//        return [
-//            domain.Ingredient(
-//                name: "Яйца",
-//                weight: 80.0,
-//                calories: 33.5,
-//                proteins: 20.0,
-//                fats: 1.2,
-//                carbohydrates: 5.7
-//            ),
-//            domain.Ingredient(
-//                name: "Молоко",
-//                weight: 200.0,
-//                calories: 40.0,
-//                proteins: 20.0,
-//                fats: 3.4,
-//                carbohydrates: 6.8
-//            )
-//        ]
     }
     
     public func getIngredient(by name: String) -> domain.Ingredient? {
-        return domain.Ingredient(
-            name: "Молоко",
-            weight: 200.0,
-            calories: 40.0,
-            proteins: 20.0,
-            fats: 3.4,
-            carbohydrates: 6.8
-        )
+        return domain.Ingredient(name: "Молоко",
+                                 emoji: "🥛",
+                                 strDescription: "Молоко дают коровы",
+                                 type: "Молочное")
     }
     
     private func mapToDomain(ingredients: [Ingredient]) -> [domain.Ingredient] {
         ingredients.map { ingredient in
-            domain.Ingredient(name: ingredient.name ?? "", weight: ingredient.weight ?? 0.0, calories: ingredient.calories ?? 0.0, proteins: ingredient.proteins ?? 0.0, fats: ingredient.fats ?? 0.0, carbohydrates: ingredient.carbohydrates ?? 0.0)
+            domain.Ingredient(name: ingredient.strIngredient ?? "",
+                              emoji: getEmoji(by: ingredient.idIngredient),
+                              strDescription: ingredient.strDescription ?? "",
+                              type: ingredient.strType ?? "")
         }
+    }
+    
+    private func getEmoji(by id: String?) -> String {
+        return "🍗"
     }
 }

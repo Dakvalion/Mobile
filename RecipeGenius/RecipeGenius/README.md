@@ -33,3 +33,15 @@
 ![RG1](https://github.com/user-attachments/assets/9029e503-5d7e-41eb-aa91-f82cff195810)
 
 </details>
+
+<details>
+
+<summary>Практические работы 5-6</summary>
+
+### Скриншоты
+
+| Списочный фрагмент | Детальный фрагмент | Экран профиля |
+|---|---|---|
+| ![img1](https://github.com/user-attachments/assets/05278109-919f-45c3-af4a-3a0416dd2651) | ![img2](https://github.com/user-attachments/assets/c7e6d84c-7237-46ec-8d70-febdfff111f6) | ![img3](https://github.com/user-attachments/assets/af8ac3b5-4225-45fe-8b52-fc740042c1d0) |
+
+</details>

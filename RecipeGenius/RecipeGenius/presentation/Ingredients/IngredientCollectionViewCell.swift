@@ -68,12 +68,27 @@ class IngredientCollectionViewCell: UICollectionViewCell {
     func configure(with ingredient: Ingredient) {
         nameLabel.text = ingredient.name
         
-        let details = """
-            Вес: \(ingredient.weight.description) г
-            Калории: \(ingredient.calories.description) ккал
-            Б/Ж/У: \(ingredient.proteins.description)/\(ingredient.fats.description)/\(ingredient.carbohydrates.description)
-            """
-        detailsLabel.text = details
+//        let details = """
+//            Вес: \(ingredient.weight.description) г
+//            Калории: \(ingredient.calories.description) ккал
+//            Б/Ж/У: \(ingredient.proteins.description)/\(ingredient.fats.description)/\(ingredient.carbohydrates.description)
+//            """
+//        detailsLabel.text = details
     }
 }
 
+class IngredientTableViewCell: UITableViewCell {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: .default, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(with ingredient: Ingredient) {
+        var content = defaultContentConfiguration()
+        content.text = "\(ingredient.emoji) \(ingredient.name)"
+        contentConfiguration = content
+    }
+}

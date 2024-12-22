@@ -19,6 +19,7 @@ public class GetNutrientsUseCase {
         else {
             return (0, 0, 0, 0)
         }
-        return (ingredient.calories, ingredient.proteins, ingredient.fats, ingredient.carbohydrates)
+        return (0, 0, 0, 0)
+//        return (ingredient.calories, ingredient.proteins, ingredient.fats, ingredient.carbohydrates)
     }
 }

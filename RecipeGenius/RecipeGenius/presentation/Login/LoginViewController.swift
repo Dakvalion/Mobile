@@ -29,12 +29,15 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(authStateChanged(_:)), name: Notification.Name("AuthStateChanged"), object: nil)
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     @objc func authStateChanged(_ notification: Notification) {
         if let success = notification.object as? Bool {
             if success {
                 print("Успешная аутентификация - \(vm.user?.uid ?? "")")
+                navigateToMainScreen()
             } else {
                 print("Ошибка аутентификации - \(vm.error?.localizedDescription ?? "")")
             }
@@ -53,6 +56,39 @@ class LoginViewController: UIViewController {
         let result = vm.skipAuth()
         if result {
             print("Мы успешно вошли как гость")
+            navigateToMainScreen()
         }
+    }
+    
+    private func navigateToMainScreen() {
+        let ingredientsVC = IngredientsViewController()
+        let navigationController = UINavigationController(rootViewController: ingredientsVC)
+        
+        let detailVC = UIViewController()
+        let detailNavigationController = UINavigationController(rootViewController: detailVC)
+        
+        let splitVC = UISplitViewController(style: .doubleColumn)
+        splitVC.preferredDisplayMode = .oneBesideSecondary
+        splitVC.setViewController(navigationController, for: .primary)
+        splitVC.setViewController(detailNavigationController, for: .secondary)
+        
+        splitVC.presentsWithGesture = true
+        splitVC.preferredSplitBehavior = .tile
+        
+        guard let window = view.window else { return }
+        window.rootViewController = splitVC
+        UIView.transition(with: window,
+                          duration: 0.3,
+                          options: .transitionCrossDissolve,
+                          animations: nil,
+                          completion: nil)
+    }
+    
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }

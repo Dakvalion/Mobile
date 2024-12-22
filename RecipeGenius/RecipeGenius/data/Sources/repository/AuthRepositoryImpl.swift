@@ -22,7 +22,7 @@ public class AuthRepositoryImpl: AuthRepository {
             guard let self = self else { return }
             switch result {
             case .success(let user):
-                self.setAuthorizationState()
+                self.setAuthorizationState(user: user)
                 completion(.success(self.mapToDomain(user: user)))
             case .failure(let failure):
                 self.setNoAuthorizationState()
@@ -36,7 +36,7 @@ public class AuthRepositoryImpl: AuthRepository {
             guard let self = self else { return }
             switch result {
             case .success(let user):
-                self.setAuthorizationState()
+                self.setAuthorizationState(user: user)
                 completion(.success(self.mapToDomain(user: user)))
             case .failure(let failure):
                 self.setNoAuthorizationState()
@@ -47,13 +47,15 @@ public class AuthRepositoryImpl: AuthRepository {
     
     public func setNoAuthorizationState() {
         sharedPreferences.isLogin = false
+        sharedPreferences.deleteUser()
     }
     
-    private func setAuthorizationState() {
+    private func setAuthorizationState(user: User) {
         sharedPreferences.isLogin = true
+        sharedPreferences.saveUser(user)
     }
     
     private func mapToDomain(user: User) -> domain.User {
-        return domain.User(uid: user.uid, name: user.name, email: user.email)
+        return domain.User(uid: user.uid, email: user.email)
     }
 }

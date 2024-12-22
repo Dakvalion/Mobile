@@ -10,6 +10,7 @@ import Foundation
 public protocol SharedPreferencesService: AnyObject {
     func saveUser(_ user: User) -> Bool
     func getUser() -> User
+    func deleteUser()
     
     var isLogin: Bool { get set }
 }

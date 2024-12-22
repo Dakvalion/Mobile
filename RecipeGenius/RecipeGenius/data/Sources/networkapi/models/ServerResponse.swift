@@ -8,11 +8,9 @@
 import Foundation
 
 public class ServerResponse: Decodable {
-    public let status: String?
-    public let data: [Ingredient]?
+    public let meals: [Ingredient]?
     
-    public init(status: String?, data: [Ingredient]?) {
-        self.status = status
-        self.data = data
+    public init(meals: [Ingredient]?) {
+        self.meals = meals
     }
 }

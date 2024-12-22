@@ -10,7 +10,6 @@ import Foundation
 public class SharedPreferencesServiceImpl: SharedPreferencesService {
     private let sharedPreferences = UserDefaults.standard
     private let keyId = "user_id"
-    private let keyName = "user_name"
     private let keyEmail = "user_email"
     private let keyIsLogin = "user_is_login"
     
@@ -18,16 +17,19 @@ public class SharedPreferencesServiceImpl: SharedPreferencesService {
     
     public func getUser() -> User {
         let uid = sharedPreferences.string(forKey: keyId) ?? ""
-        let name = sharedPreferences.string(forKey: keyName) ?? ""
         let email = sharedPreferences.string(forKey: keyEmail) ?? ""
-        return User(uid: uid, name: name, email: email)
+        return User(uid: uid, email: email)
     }
     
     public func saveUser(_ user: User) -> Bool {
         sharedPreferences.set(user.uid, forKey: keyId)
-        sharedPreferences.set(user.name, forKey: keyName)
         sharedPreferences.set(user.email, forKey: keyEmail)
         return true
+    }
+    
+    public func deleteUser() {
+        sharedPreferences.set("", forKey: keyId)
+        sharedPreferences.set("", forKey: keyEmail)
     }
     
     public var isLogin: Bool {

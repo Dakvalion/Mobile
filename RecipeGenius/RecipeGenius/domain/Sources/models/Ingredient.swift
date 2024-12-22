@@ -9,25 +9,14 @@ import Foundation
 
 public class Ingredient {
     public let name: String
-    public let weight: Double
-    public let calories: Double
-    public let proteins: Double
-    public let fats: Double
-    public let carbohydrates: Double
+    public let emoji: String
+    public let strDescription: String
+    public let type: String
     
-    public init(
-        name: String,
-        weight: Double,
-        calories: Double,
-        proteins: Double,
-        fats: Double,
-        carbohydrates: Double
-    ) {
+    public init(name: String, emoji: String, strDescription: String, type: String) {
         self.name = name
-        self.weight = weight
-        self.calories = calories
-        self.proteins = proteins
-        self.fats = fats
-        self.carbohydrates = carbohydrates
+        self.emoji = emoji
+        self.strDescription = strDescription
+        self.type = type
     }
 }

@@ -8,30 +8,15 @@
 import Foundation
 
 public class Ingredient: Decodable {
-    public let id: String?
-    public let name: String?
-    public let weight: Double?
-    public let calories: Double?
-    public let proteins: Double?
-    public let fats: Double?
-    public let carbohydrates: Double?
+    public let idIngredient: String?
+    public let strIngredient: String?
+    public let strDescription: String?
+    public let strType: String?
     
-    public init(
-        id: String?,
-        name: String?,
-        weight: Double?,
-        calories: Double?,
-        proteins: Double?,
-        fats: Double?,
-        carbohydrates: Double?
-    ) {
-        self.id = id
-        self.name = name
-        self.weight = weight
-        self.calories = calories
-        self.proteins = proteins
-        self.fats = fats
-        self.carbohydrates = carbohydrates
+    public init(idIngredient: String?, strIngredient: String?, strDescription: String?, strType: String?) {
+        self.idIngredient = idIngredient
+        self.strIngredient = strIngredient
+        self.strDescription = strDescription
+        self.strType = strType
     }
 }
-

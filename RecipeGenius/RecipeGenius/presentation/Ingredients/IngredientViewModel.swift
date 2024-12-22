@@ -7,32 +7,33 @@
 
 import Foundation
 import Combine
+import domain
 import data
 
 class IngredientViewModel: ViewModel {
-    @Published private(set) var ingredients: [Ingredient] = []
-    @Published private(set) var error: NetworkError?
+    @Published private(set) var ingredients: [domain.Ingredient] = []
+    @Published private(set) var error: Error?
+    var isLogin: Bool {
+        repository.isLogin
+    }
     
     private var cancellables = Set<AnyCancellable>()
-    private let networkApi = NetworkApi()
+    private let repository: IngredientsRepository
     
-    override init() {
+    init(repository: IngredientsRepository) {
+        self.repository = repository
         super.init()
         fetchIngredients()
     }
     
-    func addIngredient(_ ingredient: Ingredient) {
-        ingredients.append(ingredient)
-    }
-    
     func fetchIngredients() {
-        networkApi.getIngredients { [weak self] result in
+        repository.getIngredientsList { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success(let success):
-                self.ingredients = success.data ?? []
-            case .failure(let failure):
-                self.error = failure
+            case .success(let ingredients):
+                self.ingredients = ingredients
+            case .failure(let error):
+                self.error = error
             }
         }
     }

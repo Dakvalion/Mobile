@@ -11,40 +11,50 @@ import data
 import domain
 
 class IngredientsViewController: UIViewController {
-    private let viewModel = IngredientViewModel()
+    private let viewModel: IngredientViewModel
     private var cancellables = Set<AnyCancellable>()
     
-    private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 48) / 2, height: 180)
-        layout.minimumInteritemSpacing = 16
-        layout.minimumLineSpacing = 16
-        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-        
-        let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collection.backgroundColor = .systemBackground
-        collection.translatesAutoresizingMaskIntoConstraints = false
-        collection.register(IngredientCollectionViewCell.self, forCellWithReuseIdentifier: "IngredientCell")
-        return collection
+    private lazy var tableView: UITableView = {
+        let table = UITableView(frame: .zero, style: .plain)
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.register(IngredientTableViewCell.self, forCellReuseIdentifier: "IngredientCell")
+        return table
     }()
+    
+    init() {
+        self.viewModel = ViewModelFactory().createIngredientsViewModel()
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        self.viewModel = ViewModelFactory().createIngredientsViewModel()
+        super.init(coder: coder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupBindings()
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        tableView.dataSource = self
+        tableView.delegate = self
+        if viewModel.isLogin {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.fill"),
+                                                                style: .done,
+                                                                target: self,
+                                                                action: #selector(openProfilePage))
+        }
     }
     
     private func setupUI() {
         title = "Ингредиенты"
-        view.addSubview(collectionView)
+        view.addSubview(tableView)
+        view.backgroundColor = .systemBackground
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
@@ -52,47 +62,49 @@ class IngredientsViewController: UIViewController {
         viewModel.$ingredients
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
-                self?.collectionView.reloadData()
+                self?.tableView.reloadData()
             }
             .store(in: &cancellables)
         
         viewModel.$error
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] (error) in
-                guard let self = self else { return }
+            .sink { error in
                 if let error = error {
                     print("Ошибка: \(error)")
                 }
             }
             .store(in: &cancellables)
     }
+    
+    @objc func openProfilePage() {
+        let profileVM = ViewModelFactory().createProfileViewModel()
+        let profileVC = ProfileViewController(viewModel: profileVM)
+        navigationController?.pushViewController(profileVC, animated: true)
+    }
 }
 
-extension IngredientsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+extension IngredientsViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.ingredients.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IngredientCell", for: indexPath) as? IngredientCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        
-        let ingredient = viewModel.ingredients[indexPath.item]
-        let domainIngredient = domain.Ingredient(
-            name: ingredient.name ?? "",
-            weight: ingredient.weight ?? 0.0,
-            calories: ingredient.calories ?? 0.0,
-            proteins: ingredient.proteins ?? 0.0,
-            fats: ingredient.fats ?? 0.0,
-            carbohydrates: ingredient.carbohydrates ?? 0.0
-        )
-        cell.configure(with: domainIngredient)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath) as! IngredientTableViewCell
+        let ingredient = viewModel.ingredients[indexPath.row]
+        cell.configure(with: ingredient)
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let ingredient = viewModel.ingredients[indexPath.item]
-        print("Selected ingredient: \(ingredient.name ?? "")")
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let ingredient = viewModel.ingredients[indexPath.row]
+        if let detailVC = splitViewController?.viewController(for: .secondary) as? IngredientDetailViewController {
+            detailVC.ingredient = ingredient
+        } else {
+            let detailVC = IngredientDetailViewController()
+            detailVC.ingredient = ingredient
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
+
 }
