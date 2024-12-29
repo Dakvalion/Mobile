@@ -45,3 +45,17 @@
 | ![img1](https://github.com/user-attachments/assets/05278109-919f-45c3-af4a-3a0416dd2651) | ![img2](https://github.com/user-attachments/assets/c7e6d84c-7237-46ec-8d70-febdfff111f6) | ![img3](https://github.com/user-attachments/assets/af8ac3b5-4225-45fe-8b52-fc740042c1d0) |
 
 </details>
+
+<details>
+
+<summary>Практические работы 7</summary>
+
+Настроен т.н. "Tab Bar", но нет компонента "Navigation Drawer" ни в каком виде, поэтому его добавить не смогла :(
+
+### Скриншоты
+
+| Списочный фрагмент | Детальный фрагмент | Экран профиля |
+|---|---|---|
+| ![list](https://github.com/user-attachments/assets/f982464a-92c4-466a-8029-9c2fbb647f32) | ![details](https://github.com/user-attachments/assets/9497587d-509f-425b-abaa-19550c640f9d) | ![pofile](https://github.com/user-attachments/assets/f4b98aef-7334-48e9-9c57-e210df62d99b) |
+
+</details>
