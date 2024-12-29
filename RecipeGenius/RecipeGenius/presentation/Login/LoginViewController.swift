@@ -75,8 +75,22 @@ class LoginViewController: UIViewController {
         splitVC.presentsWithGesture = true
         splitVC.preferredSplitBehavior = .tile
         
+        let profileVM = ViewModelFactory().createProfileViewModel()
+        let profileVC = ProfileViewController(viewModel: profileVM)
+        let profileNavigationController = UINavigationController(rootViewController: profileVC)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [splitVC, profileNavigationController]
+        
+        splitVC.tabBarItem = UITabBarItem(title: "Ингредиенты", 
+                                          image: UIImage(systemName: "volleyball.fill"),
+                                          tag: 0)
+        profileNavigationController.tabBarItem = UITabBarItem(title: "Профиль",
+                                                              image: UIImage(systemName: "person.fill"),
+                                                              tag: 0)
+        
         guard let window = view.window else { return }
-        window.rootViewController = splitVC
+        window.rootViewController = tabBarController
         UIView.transition(with: window,
                           duration: 0.3,
                           options: .transitionCrossDissolve,

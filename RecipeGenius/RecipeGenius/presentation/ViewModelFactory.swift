@@ -25,7 +25,6 @@ class ViewModelFactory {
     }
     
     func createProfileViewModel() -> ProfileViewModel {
-        let firebaseService: FirebaseService = FirebaseServiceImpl()
         let sharedPreferencesService: SharedPreferencesService = SharedPreferencesServiceImpl()
         return ProfileViewModel(sharedPreferences: sharedPreferencesService)
     }
