@@ -44,6 +44,14 @@ public class FirebaseServiceImpl: FirebaseService {
             }
         }
     }
+    
+    public func logout() {
+        do {
+            try auth?.signOut()
+        } catch {
+            print("Почему-то не вышло")
+        }
+    }
       
     private func mapToData(from user: FirebaseAuth.User) -> User {
         return User(uid: user.uid, email: user.email ?? "")

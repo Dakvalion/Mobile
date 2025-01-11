@@ -68,27 +68,70 @@ class IngredientCollectionViewCell: UICollectionViewCell {
     func configure(with ingredient: Ingredient) {
         nameLabel.text = ingredient.name
         
-//        let details = """
-//            Вес: \(ingredient.weight.description) г
-//            Калории: \(ingredient.calories.description) ккал
-//            Б/Ж/У: \(ingredient.proteins.description)/\(ingredient.fats.description)/\(ingredient.carbohydrates.description)
-//            """
-//        detailsLabel.text = details
+        //        let details = """
+        //            Вес: \(ingredient.weight.description) г
+        //            Калории: \(ingredient.calories.description) ккал
+        //            Б/Ж/У: \(ingredient.proteins.description)/\(ingredient.fats.description)/\(ingredient.carbohydrates.description)
+        //            """
+        //        detailsLabel.text = details
     }
 }
 
 class IngredientTableViewCell: UITableViewCell {
+    let checkboxButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    let label: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 17)
+        return label
+    }()
+    
+    var isSelectedIngredient = false {
+        didSet {
+            checkboxButton.isSelected = isSelectedIngredient
+            checkboxButton.setImage(isSelectedIngredient ? UIImage(systemName: "checkmark.square") : UIImage(systemName: "square"),
+                                    for: .normal)
+        }
+    }
+    var updateIngredient: ((Bool) -> ())?
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupUI() {
+        contentView.addSubview(label)
+        contentView.addSubview(checkboxButton)
+        checkboxButton.addTarget(self, action: #selector(checkboxButtonTapped), for:.touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            checkboxButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            checkboxButton.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            label.leadingAnchor.constraint(equalTo: checkboxButton.trailingAnchor, constant: 16),
+            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ])
+    }
+    
+    @objc func checkboxButtonTapped() {
+        isSelectedIngredient.toggle()
+        updateIngredient?(isSelectedIngredient)
+    }
+    
     func configure(with ingredient: Ingredient) {
-        var content = defaultContentConfiguration()
-        content.text = "\(ingredient.emoji) \(ingredient.name)"
-        contentConfiguration = content
+        label.text = "\(ingredient.emoji) \(ingredient.name)"
+        isSelectedIngredient = ingredient.isSelected
+        updateIngredient = { [ingredient] flag in
+            ingredient.isSelected = flag
+        }
     }
 }

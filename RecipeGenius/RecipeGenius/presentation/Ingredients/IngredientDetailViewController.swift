@@ -59,6 +59,7 @@ class IngredientDetailViewController: UIViewController {
         NSLayoutConstraint.activate([
             emojiContainerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             emojiContainerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+//            emojiContainerView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             emojiContainerView.widthAnchor.constraint(equalToConstant: 120),
             emojiContainerView.heightAnchor.constraint(equalToConstant: 120),
             

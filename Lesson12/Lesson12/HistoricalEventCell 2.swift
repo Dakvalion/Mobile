@@ -2,7 +2,7 @@
 //  HistoricalEventCell.swift
 //  Lesson12
 //
-//  Created by Егор Бадмаев on 17.11.2024.
+//  Created by Daria Nikitina on 17.11.2024.
 //
 
 import UIKit

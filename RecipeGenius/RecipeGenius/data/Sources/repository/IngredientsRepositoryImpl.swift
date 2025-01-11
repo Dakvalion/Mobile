@@ -40,15 +40,59 @@ public class IngredientsRepositoryImpl: IngredientsRepository {
     }
     
     private func mapToDomain(ingredients: [Ingredient]) -> [domain.Ingredient] {
-        ingredients.map { ingredient in
-            domain.Ingredient(name: ingredient.strIngredient ?? "",
-                              emoji: getEmoji(by: ingredient.idIngredient),
+        ingredients.compactMap { ingredient in
+            guard let ingredientName = ingredient.strIngredient,
+                  let emoji = getEmoji(by: ingredientName) else { return nil }
+            return domain.Ingredient(name: ingredient.strIngredient ?? "",
+                              emoji: emoji,
                               strDescription: ingredient.strDescription ?? "",
                               type: ingredient.strType ?? "")
         }
     }
     
-    private func getEmoji(by id: String?) -> String {
-        return "🍗"
+    private func getEmoji(by name: String) -> String? {
+        return emojiDict[name]
     }
+    
+    private let emojiDict: [String: String] = [
+        "Chicken": "🍗",
+        "Salmon": "🐟",
+        "Beef": "🥩",
+        "Pork": "🍖",
+        "Avocado": "🥑",
+        "Asparagus": "🥬",
+        "Aubergine": "🍆",
+        "Bacon": "🥓",
+        "Basil": "🌿",
+        "Basmati Rice": "🍚",
+        "Bay Leaves": "🍃",
+        "Beef Brisket": "🥩",
+        "Salt": "🧂",
+        "Bread": "🍞",
+        "Broccoli": "🥦",
+        "Butter": "🧈",
+        "Carrots": "🥕",
+        "Cheese": "🧀",
+        "Chilli": "🌶",
+        "Cucumber": "🥒",
+        "Egg": "🥚",
+        "Garlic": "🧄",
+        "Honey": "🍯",
+        "Lemon": "🍋",
+        "Milk": "🥛",
+        "Onions": "🧅",
+        "Oysters": "🦪",
+        "Peanuts": "🥜",
+        "Potatoes": "🥔",
+        "Rice": "🍚",
+        "Sake": "🍶",
+        "Strawberries": "🍓",
+        "Tomatoes": "🍅",
+        "Pretzels": "🥨",
+        "Banana": "🍌",
+        "Peaches": "🍑",
+        "Cherry": "🍒",
+        "Apples": "🍎",
+        "Pears": "🍐"
+    ]
 }

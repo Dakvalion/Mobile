@@ -12,4 +12,5 @@ public protocol AuthRepository {
     func createAccount(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void)
     
     func setNoAuthorizationState()
+    func logout()
 }

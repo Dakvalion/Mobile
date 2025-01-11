@@ -20,6 +20,15 @@ class IngredientsViewController: UIViewController {
         table.register(IngredientTableViewCell.self, forCellReuseIdentifier: "IngredientCell")
         return table
     }()
+    private lazy var generateRecipeButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Случайный рецепт 🪄", for: .normal)
+        button.backgroundColor = .backgroundButton
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 10
+        return button
+    }()
     
     init() {
         self.viewModel = ViewModelFactory().createIngredientsViewModel()
@@ -48,13 +57,21 @@ class IngredientsViewController: UIViewController {
     private func setupUI() {
         title = "Ингредиенты"
         view.addSubview(tableView)
+        view.addSubview(generateRecipeButton)
         view.backgroundColor = .systemBackground
+        
+        generateRecipeButton.addTarget(self, action: #selector(generateRecipe), for: .touchUpInside)
         
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: generateRecipeButton.topAnchor, constant: -20),
+            
+            generateRecipeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            generateRecipeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            generateRecipeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            generateRecipeButton.heightAnchor.constraint(equalToConstant: 46)
         ])
     }
     
@@ -77,9 +94,11 @@ class IngredientsViewController: UIViewController {
     }
     
     @objc func openProfilePage() {
-        let profileVM = ViewModelFactory().createProfileViewModel()
-        let profileVC = ProfileViewController(viewModel: profileVM)
-        navigationController?.pushViewController(profileVC, animated: true)
+        tabBarController?.selectedIndex = 2
+    }
+    
+    @objc func generateRecipe() {
+        // Здесь должна быть логика для ИИ-генерации рецепта
     }
 }
 

@@ -12,6 +12,7 @@ public class Ingredient {
     public let emoji: String
     public let strDescription: String
     public let type: String
+    public var isSelected: Bool = false
     
     public init(name: String, emoji: String, strDescription: String, type: String) {
         self.name = name

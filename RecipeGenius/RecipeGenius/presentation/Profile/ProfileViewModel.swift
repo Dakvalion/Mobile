@@ -5,21 +5,31 @@
 //  Created by Daria Nikitina on 18.12.2024.
 //
 
-import data
+import domain
 import Combine
 
 class ProfileViewModel: ViewModel {
     @Published private(set) var user: User?
     
-    private let sharedPreferences: SharedPreferencesService
+    private let storageRepository: StorageRepository
+    private let authRepository: AuthRepository
     
-    init(sharedPreferences: SharedPreferencesService) {
-        self.sharedPreferences = sharedPreferences
+    init(storageRepository: StorageRepository, authRepository: AuthRepository) {
+        self.storageRepository = storageRepository
+        self.authRepository = authRepository
         super.init()
         fetchUser()
     }
     
+    var isLogin: Bool {
+        storageRepository.isLogin
+    }
+    
     func fetchUser() {
-        self.user = sharedPreferences.getUser()
+        self.user = storageRepository.getUser()
+    }
+    
+    func logout() {
+        authRepository.logout()
     }
 }

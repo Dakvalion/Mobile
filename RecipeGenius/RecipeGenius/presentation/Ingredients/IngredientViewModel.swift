@@ -27,7 +27,7 @@ class IngredientViewModel: ViewModel {
     }
     
     func fetchIngredients() {
-        repository.getIngredientsList { [weak self] result in
+        GetIngredientsUseCase(ingredientsRepository: repository).execute { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let ingredients):

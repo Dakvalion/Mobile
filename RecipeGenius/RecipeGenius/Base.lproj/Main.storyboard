@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="RecipeGenius" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="BYZ-38-t0r" customClass="LoginViewController" customModule="RecipeGenius" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -37,7 +37,7 @@
                                 <rect key="frame" x="100" y="528" width="193" height="34.333333333333371"/>
                                 <color key="tintColor" name="backgroundButton"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Войти"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Войти" cornerStyle="large"/>
                                 <connections>
                                     <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bo4-qa-4wE"/>
                                 </connections>
@@ -46,7 +46,7 @@
                                 <rect key="frame" x="100" y="578.33333333333337" width="193" height="34.333333333333371"/>
                                 <color key="tintColor" name="backgroundButton"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Авторизоваться"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Авторизоваться" cornerStyle="large"/>
                                 <connections>
                                     <action selector="createAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="APH-Oc-sh4"/>
                                 </connections>
@@ -55,7 +55,7 @@
                                 <rect key="frame" x="60" y="763.66666666666663" width="273" height="34.333333333333371"/>
                                 <color key="tintColor" name="backgroundButton"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Продолжить без авторизации"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Продолжить без авторизации" cornerStyle="large"/>
                                 <connections>
                                     <action selector="skipAuth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z5V-zk-g01"/>
                                 </connections>
@@ -80,6 +80,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="authButton" destination="yal-ZX-9OC" id="rZK-9h-pb0"/>
+                        <outlet property="guestButton" destination="5CX-NV-dpt" id="RcA-EU-1EW"/>
+                        <outlet property="loginButton" destination="pax-wV-fiK" id="av4-kB-lNY"/>
                         <outlet property="loginTextField" destination="UDS-xQ-eT5" id="UoY-Fr-V5p"/>
                         <outlet property="passwordTextField" destination="lr2-W0-kJN" id="pnW-9O-DjS"/>
                     </connections>

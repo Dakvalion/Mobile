@@ -2,7 +2,7 @@
 //  ScrollViewAppViewController.swift
 //  ScrollViewApp
 //
-//  Created by Егор Бадмаев on 16.11.2024.
+//  Created by Daria Nikitina on 16.11.2024.
 //
 
 import UIKit

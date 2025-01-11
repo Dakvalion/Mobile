@@ -26,6 +26,13 @@ class ViewModelFactory {
     
     func createProfileViewModel() -> ProfileViewModel {
         let sharedPreferencesService: SharedPreferencesService = SharedPreferencesServiceImpl()
-        return ProfileViewModel(sharedPreferences: sharedPreferencesService)
+        let storageRepository: StorageRepository = StorageRepositoryImpl(sharedPreferences: sharedPreferencesService)
+        let firebaseService: FirebaseService = FirebaseServiceImpl()
+        let authRepository: AuthRepository = AuthRepositoryImpl(firebaseService: firebaseService, sharedPreferences: sharedPreferencesService)
+        return ProfileViewModel(storageRepository: storageRepository, authRepository: authRepository)
+    }
+    
+    func createRecipesViewModel() -> RecipeViewModel {
+        return RecipeViewModel()
     }
 }

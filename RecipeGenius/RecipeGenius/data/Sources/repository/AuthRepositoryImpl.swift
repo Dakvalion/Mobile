@@ -55,6 +55,11 @@ public class AuthRepositoryImpl: AuthRepository {
         sharedPreferences.saveUser(user)
     }
     
+    public func logout() {
+        setNoAuthorizationState()
+        firebaseService.logout()
+    }
+    
     private func mapToDomain(user: User) -> domain.User {
         return domain.User(uid: user.uid, email: user.email)
     }

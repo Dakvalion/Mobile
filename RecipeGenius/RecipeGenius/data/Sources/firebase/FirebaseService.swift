@@ -10,4 +10,5 @@ import Foundation
 public protocol FirebaseService {
     func signIn(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void)
     func createAccount(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void)
+    func logout()
 }
